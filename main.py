@@ -1,12 +1,7 @@
+# main.py
 import os
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langgraph.graph import START, StateGraph, MessagesState
-from langgraph.prebuilt import ToolNode, tools_condition
-from langgraph.checkpoint.memory import MemorySaver
-
-# Ensure you instruct the user to configure variables locally
-# os.environ["GEMINI_API_KEY"] = "YOUR_KEY"
-# os.environ["SERPER_API_KEY"] = "YOUR_KEY"
+# IMPORT THE APP GRAPH OBJECT FROM YOUR CORE FILE HERE:
+from agent_core import app 
 
 print("--- DealScout AI Agent Terminal Interface ---")
 print("Type 'exit' or 'quit' to stop the loop.\n")
@@ -18,11 +13,15 @@ while True:
     if user_input.lower() in ["exit", "quit"]:
         print("Goodbye!")
         break
+    
+    if not user_input.strip():
+        continue
         
     inputs = {"messages": [{"role": "user", "content": user_input}]}
     
-    # Run the agent stream
+    final_msg = None
     for output in app.stream(inputs, config, stream_mode="values"):
         final_msg = output["messages"][-1]
     
-    print(f"Agent: {final_msg.content}\n")
+    if final_msg:
+        print(f"Agent: {final_msg.content}\n")
