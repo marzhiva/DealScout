@@ -26,8 +26,8 @@ To get started with DealScout, follow these steps:
     **For Terminal Session (replace with your actual keys):**
 
     ```bash
-    export GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-    export SERPER_API_KEY="YOUR_SERPER_API_KEY"
+    set GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+    set SERPER_API_KEY="YOUR_SERPER_API_KEY"
     ```
 
     **For Colab Notebooks:**
