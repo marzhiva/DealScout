@@ -12,6 +12,22 @@ To get started with DealScout, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
+    **Clone the Repository or download zip file and continue working in CMD from second step:**
+    If you haven't already, clone the project and navigate into the directory:
+    ```bash
+    git clone https://github.com/marzhiva/DealScout.git
+    cd DealScout
+    ```
+    Isolate your project dependencies from your global Python environment:
+    ```bash
+    python -m venv venv
+    ```
+    Activate the environment to start routing python and pip commands locally:
+
+    Windows (Command Prompt):
+    ```DOS
+    venv\Scripts\activate
+    ```
 
 2.  **Set Up API Keys:**
     DealScout requires API keys for its functionality. Obtain your keys for Gemini and Serper, and then set them as environment variables. You can do this by exporting them in your terminal session or by adding them to a `.env` file.
